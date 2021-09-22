@@ -2,7 +2,7 @@
 
 This Terraform module setup an Ethereum monitoring solution based on https://github.com/cubedro/eth-netstats
 
-![Screenshot](images/screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/Nuagic/terraform-aws-eth-netstats/master/images/screenshot.jpg)
 
 ## Usage
 
