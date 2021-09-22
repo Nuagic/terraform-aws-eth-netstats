@@ -63,6 +63,6 @@ variable "service_hostname" {
 
 variable "nodes" {
   description = "Node map"
-  type        = map(object({ host = string }))
+  type        = map(object({ host = string, port = number }))
 }
 

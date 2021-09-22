@@ -7,7 +7,7 @@ This Terraform module setup an Ethereum monitoring solution based on https://git
 ## Usage
 
 ```hcl
-module "ethstats" {
+module "eth-netstats" {
   source                    = "Nuagic/eth-netstats/aws"
   name                      = "eth-netstats"
   vpc_id                    = "vpc-xxxxxx"
@@ -22,8 +22,7 @@ module "ethstats" {
 ```
 
 ## Examples
-* [Complete exemple]()
-  
+* [Complete example](https://github.com/Nuagic/terraform-aws-eth-netstats/blob/master/examples/complete/main.tf)
 
 ## Requirements
 
@@ -51,7 +50,7 @@ module "ethstats" {
 | ethstats\_docker\_image | EthStats docker image | `string` | `"nuagic/eth-netstats:latest"` | no |
 | ethstats\_port | EthStats port | `number` | `80` | no |
 | name | Resources name | `string` | n/a | yes |
-| nodes | Node map | `map(object({ host = string }))` | n/a | yes |
+| nodes | Node map | `map(object({ host = string, port = number }))` | n/a | yes |
 | service\_discovery\_service | Service Discovery service id | `string` | `null` | no |
 | service\_hostname | Service Discovery service hostname | `string` | `null` | no |
 | subnet\_ids | Subnet IDs | `list(string)` | n/a | yes |

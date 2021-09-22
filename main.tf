@@ -61,6 +61,7 @@ module "nodes" {
   task_container_environment = {
     NODE_ENV      = "production"
     RPC_HOST      = each.value["host"]
+    RPC_PORT      = each.value["port"]
     INSTANCE_NAME = each.key
     WS_SERVER     = "ws://${var.service_hostname}:${var.ethstats_port}"
     WS_SECRET     = random_password.ethstats.result
