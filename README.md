@@ -15,7 +15,10 @@ module "eth-netstats" {
   service_discovery_service = "srv-ssssss"
   service_hostname          = "eth-netstats.mynetwork.local"
   nodes                     = {
-    node-1 = { "host" = "ip-10-100-9-51.eu-west-1.compute.internal" }
+    node-1 = {
+      host = "ip-10-100-9-51.eu-west-1.compute.internal"
+      port = 8545
+    }
   }
 }
 
