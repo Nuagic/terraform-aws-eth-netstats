@@ -8,7 +8,7 @@ resource "aws_ecs_cluster" "ethstats" {
 module "ethstats" {
   source                             = "telia-oss/ecs-fargate/aws"
   version                            = "5.2.0"
-  name_prefix                        = "ethstats"
+  name_prefix                        = var.name
   vpc_id                             = var.vpc_id
   private_subnet_ids                 = var.subnet_ids
   cluster_id                         = var.create_ecs_cluster ? aws_ecs_cluster.ethstats[0].id : var.ecs_cluster
