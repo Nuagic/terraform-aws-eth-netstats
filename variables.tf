@@ -66,3 +66,15 @@ variable "nodes" {
   type        = map(object({ host = string, port = number }))
 }
 
+variable "cpu" {
+  description = "CPU"
+  type        = number
+  default     = 1024
+}
+
+variable "memory" {
+  description = "Memory"
+  type        = number
+  default     = 2048
+}
+

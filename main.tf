@@ -15,8 +15,8 @@ module "ethstats" {
   task_container_image               = var.ethstats_docker_image
   deployment_minimum_healthy_percent = 0
   deployment_maximum_percent         = 100
-  task_definition_cpu                = 1024
-  task_definition_memory             = 2048
+  task_definition_cpu                = var.cpu
+  task_definition_memory             = var.memory
   desired_count                      = 1
   task_container_port                = var.ethstats_port
   health_check = {

@@ -47,11 +47,13 @@ module "eth-netstats" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| cpu | CPU | `number` | `1024` | no |
 | create\_ecs\_cluster | Create ECS cluster | `bool` | `true` | no |
 | ecs\_cluster | ECS cluster | `string` | `null` | no |
 | eth-net-intelligence-api\_docker\_image | eth-net-intelligence-api docker image | `string` | `"nuagic/eth-net-intelligence-api:latest"` | no |
 | ethstats\_docker\_image | EthStats docker image | `string` | `"nuagic/eth-netstats:latest"` | no |
 | ethstats\_port | EthStats port | `number` | `80` | no |
+| memory | Memory | `number` | `2048` | no |
 | name | Resources name | `string` | n/a | yes |
 | nodes | Node map | `map(object({ host = string, port = number }))` | n/a | yes |
 | service\_discovery\_service | Service Discovery service id | `string` | `null` | no |
