@@ -37,9 +37,9 @@ resource "random_password" "ethstats" {
 }
 
 module "nodes" {
-  #  source                             = "telia-oss/ecs-fargate/aws"
-  #  version                            = "5.2.0"
-  source                             = "github.com/feraudet/terraform-aws-ecs-fargate?ref=ethstats"
+  source  = "telia-oss/ecs-fargate/aws"
+  version = "5.4.0"
+  #source                             = "github.com/feraudet/terraform-aws-ecs-fargate?ref=ethstats"
   for_each                           = var.nodes
   name_prefix                        = each.key
   vpc_id                             = var.vpc_id
@@ -65,6 +65,7 @@ module "nodes" {
     INSTANCE_NAME = each.key
     WS_SERVER     = "ws://${var.service_hostname}:${var.ethstats_port}"
     WS_SECRET     = random_password.ethstats.result
+    NO_HASHRATE   = lookup(each.value, "no_hashrate", false)
   }
 }
 
